@@ -14,7 +14,7 @@ Pode ser feito por partes do sistema que estejam prontos.
 
 - O que é um caso de teste? Dê exemplos.
 R: Caso de teste é um conjunto de condições/passos utilizado na execução de teste de software.
-Exemplos: 
+
 
 - Qual a diferença entre um teste manual e um teste automatizado?
 R: Testes manuais, como o nome já diz é testes realizado de forma manual pelo desenvolvedor, tester, enfim, 
