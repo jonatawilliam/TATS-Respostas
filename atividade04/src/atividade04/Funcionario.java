@@ -70,5 +70,13 @@ public class Funcionario {
     public void setSalarioBase(float salarioBase) {
         this.salarioBase = salarioBase;
     }
+
+    public Object salvar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getMensagemErro() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
