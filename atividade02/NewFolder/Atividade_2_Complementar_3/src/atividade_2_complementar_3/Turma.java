@@ -11,50 +11,7 @@ package atividade_2_complementar_3;
  */
 public class Turma {
 
-    private String codDisciplina;
-    private String codTurma;
-    private int maximoAlunos;
-
-    /**
-     * @return the codDisciplina
-     */
-    public String getCodDisciplina() {
-        return codDisciplina;
-    }
-
-    /**
-     * @param codDisciplina the codDisciplina to set
-     */
-    public void setCodDisciplina(String codDisciplina) {
-        this.codDisciplina = codDisciplina;
-    }
-
-    /**
-     * @return the codTurma
-     */
-    public String getCodTurma() {
-        return codTurma;
-    }
-
-    /**
-     * @param codTurma the codTurma to set
-     */
-    public void setCodTurma(String codTurma) {
-        this.codTurma = codTurma;
-    }
-
-    /**
-     * @return the maximoAlunos
-     */
-    public int getMaximoAlunos() {
-        return maximoAlunos;
-    }
-
-    /**
-     * @param maximoAlunos the maximoAlunos to set
-     */
-    public void setMaximoAlunos(int maximoAlunos) {
-        this.maximoAlunos = maximoAlunos;
-    }
+    String codDisciplina, codTurma;
+    int maximoAlunos;
 
 }
