@@ -14,6 +14,7 @@ public class Funcionario {
     private String email;
     private String cargo;
     private float salarioBase;
+    private String MensagemErro;
 
     /**
      * @return the nome
@@ -71,12 +72,37 @@ public class Funcionario {
         this.salarioBase = salarioBase;
     }
 
-    public Object salvar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void validarCampos() {
+        
+        MensagemErro = "";
+        
+        if(nome.equals(""))
+            MensagemErro  += "Nome vazio\n";
+        
+        if(email.equals(""))
+            MensagemErro += "E-mail vazio\n";
+        
+        if(cargo.equals(""))
+            MensagemErro += "Cargo vazia\n";
+        
+        if(salarioBase <= 0)
+            MensagemErro += "Salario Base vazio\n";
+  
     }
-
-    public Object getMensagemErro() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public boolean salvar() {
+        validarCampos();
+        
+        if(MensagemErro != "")
+            return false;
+        else
+            return true;
+        
+    }
+        
+    public String getMensagemErro() {
+        return MensagemErro;
     }
     
 }

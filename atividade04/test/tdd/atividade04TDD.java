@@ -25,7 +25,7 @@ public class atividade04TDD {
         funcionario.setEmail("");
         funcionario.setCargo("");
         funcionario.setSalarioBase(0f);
-        assertNull(funcionario.salvar());
+        assertFalse(funcionario.salvar());
         assertEquals("Nome vazio\nE-mail vazio\nCargo vazia\nSalario Base vazio\n", funcionario.getMensagemErro());
     }
     
