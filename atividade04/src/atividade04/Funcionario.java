@@ -15,6 +15,7 @@ public class Funcionario {
     private String cargo;
     private float salarioBase;
     private String MensagemErro;
+    private String MensagemCargoVazio;
 
     /**
      * @return the nome
@@ -76,6 +77,7 @@ public class Funcionario {
     public void validarCampos() {
         
         MensagemErro = "";
+        MensagemCargoVazio = "";
         
         if(nome.equals(""))
             MensagemErro  += "Nome vazio\n";
@@ -84,7 +86,13 @@ public class Funcionario {
             MensagemErro += "E-mail vazio\n";
         
         if(cargo.equals(""))
-            MensagemErro += "Cargo vazia\n";
+            MensagemErro += "Cargo vazio\n";
+        
+        if(!cargo.equals("") || !cargo.equals("Gerente") || 
+                                !cargo.equals("Desenvolvedor") || 
+                                !cargo.equals("Dba") || 
+                                !cargo.equals("Testador"))
+            MensagemCargoVazio += "Cargo não existe\n";
         
         if(salarioBase <= 0)
             MensagemErro += "Salario Base vazio\n";
@@ -103,6 +111,10 @@ public class Funcionario {
         
     public String getMensagemErro() {
         return MensagemErro;
+    }
+    
+    public String getMensagemCargoVazio() {
+        return MensagemCargoVazio;
     }
     
 }

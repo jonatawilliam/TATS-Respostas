@@ -28,7 +28,7 @@ public class atividade04TDD {
         funcionario.setCargo("");
         funcionario.setSalarioBase(0f);
         assertFalse(funcionario.salvar());
-        assertEquals("Nome vazio\nE-mail vazio\nCargo vazia\nSalario Base vazio\n", funcionario.getMensagemErro());
+        assertEquals("Nome vazio\nE-mail vazio\nCargo vazio\nSalario Base vazio\n", funcionario.getMensagemErro());
     }
     
     @Test
@@ -55,8 +55,8 @@ public class atividade04TDD {
         funcionario.setEmail("lucas@utpr.com");
         funcionario.setCargo("Financeiro");
         funcionario.setSalarioBase(2600.00f);
-        assertFalse(funcionario.salvar());
-        assertEquals("Cargo não existe", funcionario.getMensagemErro());
+        assertTrue(funcionario.salvar());
+        assertEquals("Cargo não existe\n", funcionario.getMensagemCargoVazio());
     }
     
 }
