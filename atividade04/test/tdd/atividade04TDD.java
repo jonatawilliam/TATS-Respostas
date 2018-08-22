@@ -46,4 +46,17 @@ public class atividade04TDD {
         Assert.assertEquals(7000.00f, calculadora.calcular(funcionario), 0.1);
     }
     
+    @Test
+    public void testeCargoNaoExiste() throws Exception {
+        
+        Funcionario funcionario = new Funcionario();
+        Calculadora calculadora = new Calculadora();
+        funcionario.setNome("Lucas Alves");
+        funcionario.setEmail("lucas@utpr.com");
+        funcionario.setCargo("Financeiro");
+        funcionario.setSalarioBase(2600.00f);
+        assertFalse(funcionario.salvar());
+        assertEquals("Cargo não existe", funcionario.getMensagemErro());
+    }
+    
 }
