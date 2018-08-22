@@ -9,6 +9,7 @@ package tdd;
 import atividade04.Calculadora;
 import atividade04.Funcionario;
 import java.util.List;
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -37,13 +38,12 @@ public class atividade04TDD {
         Calculadora calculadora = new Calculadora();
         funcionario.setNome("José Silva");
         funcionario.setEmail("jose@utpr.com");
-        funcionario.setCargo("Professor");
-        funcionario.setSalarioBase(10.000f);
+        funcionario.setCargo("Gerente");
+        funcionario.setSalarioBase(10000.00f);
         assertTrue(funcionario.salvar());
         assertEquals("", funcionario.getMensagemErro());
         assertNotNull(calculadora.calcular(funcionario));
-        assertEquals("7000.0f", calculadora.calcular(funcionario));
-        
+        Assert.assertEquals(7000.00f, calculadora.calcular(funcionario), 0.1);
     }
     
 }
