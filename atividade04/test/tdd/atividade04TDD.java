@@ -6,6 +6,7 @@
 package tdd;
 
 
+import atividade04.Calculadora;
 import atividade04.Funcionario;
 import java.util.List;
 import org.junit.Test;
@@ -27,6 +28,22 @@ public class atividade04TDD {
         funcionario.setSalarioBase(0f);
         assertFalse(funcionario.salvar());
         assertEquals("Nome vazio\nE-mail vazio\nCargo vazia\nSalario Base vazio\n", funcionario.getMensagemErro());
+    }
+    
+    @Test
+    public void testeSalarioLiquidoGerenteMaior5000() throws Exception {
+        
+        Funcionario funcionario = new Funcionario();
+        Calculadora calculadora = new Calculadora();
+        funcionario.setNome("José Silva");
+        funcionario.setEmail("jose@utpr.com");
+        funcionario.setCargo("Professor");
+        funcionario.setSalarioBase(10.000f);
+        assertTrue(funcionario.salvar());
+        assertEquals("", funcionario.getMensagemErro());
+        assertNotNull(calculadora.calcular(funcionario));
+        assertEquals("7000.0f", calculadora.calcular(funcionario));
+        
     }
     
 }
