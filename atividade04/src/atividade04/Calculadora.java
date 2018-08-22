@@ -14,28 +14,32 @@ import java.util.List;
  */
 public class Calculadora {
     public float calcular(Funcionario funcionario) {
-        float salarioLiquido; 
+        float salarioLiquido = 0; 
         
-        if(funcionario.getCargo() == "Desevolvedor" && funcionario.getSalarioBase() >= 3000.00f) {
-            salarioLiquido = funcionario.getSalarioBase() * 0.80f;
-        }
-        else {
-            salarioLiquido = funcionario.getSalarioBase() * 0.90f;
-        }
+        if(funcionario.getCargo().equals("Desevolvedor")) 
+            if (funcionario.getSalarioBase() >= 3000.00f) {    
+                salarioLiquido = funcionario.getSalarioBase() * 0.80f;
+            }
+            else {
+                salarioLiquido = funcionario.getSalarioBase() * 0.90f;
+            }
         
-        if(funcionario.getCargo() == "Dba" || funcionario.getCargo() == "Testador" && funcionario.getSalarioBase() >= 2000.00f) {
-            salarioLiquido = funcionario.getSalarioBase() * 0.75f;
-        }
-        else {
-            salarioLiquido = funcionario.getSalarioBase() * 0.85f;
-        }
+        if(funcionario.getCargo().equals("Dba") || funcionario.getCargo().equals("Testador"))
+            if (funcionario.getSalarioBase() >= 2000.00f) {
+                salarioLiquido = funcionario.getSalarioBase() * 0.75f;
+            }
+            else {
+                salarioLiquido = funcionario.getSalarioBase() * 0.85f;
+            }
         
-        if(funcionario.getCargo() == "Gerente" && funcionario.getSalarioBase() >= 5000.00f) {
-            salarioLiquido = funcionario.getSalarioBase() * 0.70f;
-        }
-        else {
-            salarioLiquido = funcionario.getSalarioBase() * 0.80f;
-        }
+        if(funcionario.getCargo().equals("Gerente"))
+            if (funcionario.getSalarioBase() >= 5000.00f) {
+                salarioLiquido = funcionario.getSalarioBase() * 0.70f;
+            }
+            else {
+                salarioLiquido = funcionario.getSalarioBase() * 0.80f;
+            }
+       
         
         return salarioLiquido;
     }
